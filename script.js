@@ -4,8 +4,15 @@ let ffmpegInstance = null;
 // Inicializar ffmpeg.js ao carregar a página
 document.addEventListener('DOMContentLoaded', async () => {
     try {
+        // Verifique se FFmpeg está definido
+        if (typeof FFmpeg === 'undefined') {
+            throw new Error('FFmpeg não está disponível.');
+        }
+
         const { createFFmpeg } = FFmpeg;
         ffmpegInstance = createFFmpeg({ log: true });
+
+        // Carregar a instância do ffmpeg
         await ffmpegInstance.load();
         console.log('ffmpeg.js carregado com sucesso.');
     } catch (error) {
