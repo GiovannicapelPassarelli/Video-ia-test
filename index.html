@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Vídeo Personalizado</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Criação de Vídeo Personalizado</h1>
+    <label for="imageUpload" class="custom-file-upload">
+        Selecionar Imagens
+        <input type="file" id="imageUpload" accept="image/*" multiple>
+    </label>
+    <button id="createVideoBtn">Criar Vídeo</button>
+    <div id="videoContainer"></div>
+    <!-- Scripts JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.10.0/dist/ffmpeg.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
