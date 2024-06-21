@@ -1,21 +1,9 @@
 // Variável global para armazenar a instância do FFmpeg
 let ffmpegInstance = null;
 
-// Função para carregar o ffmpeg.js
-async function loadFFmpeg() {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@ffmpeg/ffmpeg@0.10.0/dist/ffmpeg.min.js';
-        script.onload = resolve;
-        script.onerror = reject;
-        document.body.appendChild(script);
-    });
-}
-
 // Inicializar ffmpeg.js ao carregar a página
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        await loadFFmpeg();
         const { createFFmpeg } = FFmpeg;
         ffmpegInstance = createFFmpeg({ log: true });
         await ffmpegInstance.load();
